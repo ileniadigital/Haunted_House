@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
 
 public class GUIVisitor_ec22792 implements Visitor, ActionListener {
@@ -12,10 +12,12 @@ public class GUIVisitor_ec22792 implements Visitor, ActionListener {
     public JPanel p1;
     public JPanel p2;
     public JPanel p3;
-    public JLabel gold;
-    public int goldTot= 0;
-    public JLabel items;
-    public List<Item> itemList= new ArrayList<Item>();
+    public static JLabel gold;
+    public static int goldTot= 0;
+    public static JList<Item> items;
+    public static JLabel itemsLabel;
+    public static HashMap<Item,String> itemList= new HashMap<Item,String>();
+    public static String itemsString="";
     public JLabel welcome;
     public JTextArea map;
     public JButton a;
@@ -37,19 +39,18 @@ public class GUIVisitor_ec22792 implements Visitor, ActionListener {
         p1= new JPanel();
         p1.setPreferredSize(new Dimension(720,425));
         //Gold
-        gold= new JLabel("You have " + goldTot +" gold");
+        gold= new JLabel("Gold: "+ goldTot);
         gold.setHorizontalAlignment(JLabel.LEFT);
         gold.setVerticalAlignment(JLabel.TOP);
         gold.setBackground(Color.orange);
         gold.setOpaque(true);
         p1.add(gold);
         //Items
-        items= new JLabel("You have X items");
-        items.setHorizontalAlignment(JLabel.LEFT);
-        items.setVerticalAlignment(JLabel.TOP);
-        items.setBackground(Color.orange);
-        items.setOpaque(true);
-        p1.add(items);
+        itemsString=itemsToString(itemList);
+        itemsLabel= new JLabel("Items" + itemsString);
+        itemsLabel.setBackground(Color.orange);
+        itemsLabel.setOpaque(true);
+        p1.add(itemsLabel);
 
         //Welcome & map
         p2= new JPanel();
@@ -93,6 +94,7 @@ public class GUIVisitor_ec22792 implements Visitor, ActionListener {
         f.add(p2);
         f.add(p3);
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==a) {dir = new Room_ec22433().visit(v, dir);}
@@ -107,32 +109,78 @@ public class GUIVisitor_ec22792 implements Visitor, ActionListener {
     }
 
     @Override
-    public char getChoice(String descriptioOfChoices, char[] arrayOfPossibleChoices) {
-        return 0;
-    }
-
-    @Override
     public boolean giveItem(Item itemGivenToVisitor) {
+        if (!((hasEqualItem(itemGivenToVisitor)) || (hasIdenticalItem(itemGivenToVisitor)))){
+            itemList.put(itemGivenToVisitor, itemGivenToVisitor.toString());
+            itemsString=itemsToString(itemList);
+            itemsLabel.setText("Items: " + itemsString);
+            return true;
+        }
+        return false;
+
+    }
+    public static String itemsToString(HashMap<Item, String> xs){
+        itemsString="";
+        for (String x: itemList.values()){
+            itemsString+=x+ " ,";
+        }
+        return itemsString;
+    }
+    @Override
+    public boolean hasEqualItem(Item itemToCheckFor) {
+        if (itemList.containsValue(itemToCheckFor.toString())){
+            return true;
+        }
         return false;
     }
 
     @Override
     public boolean hasIdenticalItem(Item itemToCheckFor) {
+        if (GUIVisitor_ec22792.itemList.containsKey(itemToCheckFor)){
+            return true;
+        }
         return false;
     }
 
-    @Override
-    public boolean hasEqualItem(Item itemToCheckFor) {
-        return false;
-    }
 
     @Override
     public void giveGold(int numberOfPiecesToGive) {
-
+        tell("You have received " + numberOfPiecesToGive+ " gold");
+        goldTot = goldTot + numberOfPiecesToGive;
+        gold.setText("Gold:" + Integer.toString(goldTot));
+        return;
     }
 
     @Override
     public int takeGold(int numberOfPiecesToTake) {
-        return 0;
+        tell("You lose " + numberOfPiecesToTake + "gold");
+        goldTot=goldTot-numberOfPiecesToTake;
+        gold.setText("Gold:" + Integer.toString(goldTot));
+        return goldTot;
     }
+
+    public char getChoice(String descriptionOfChoices, char[] arrayOfPossibleChoices) {
+        char choice;
+        boolean valid = false;
+        JOptionPane.showMessageDialog(null, descriptionOfChoices);
+        String ans = JOptionPane.showInputDialog(null, "Enter choice");
+        choice = ans.charAt(0);
+
+        while (!valid) {
+            for (char x : arrayOfPossibleChoices) {
+                if (choice == x) {
+                    valid = true;
+                    break; // exit the loop once a valid choice is found
+                }
+            }
+            if (!valid) {
+                ans = JOptionPane.showInputDialog(null, "Invalid choice " + descriptionOfChoices);
+                choice = ans.charAt(0);
+            }
+        }
+        return choice;
+    }
+
+
 }
+

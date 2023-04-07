@@ -38,18 +38,18 @@ class House_ec22792 extends House{
         int gold=0;
         char choice;
         char[] options= {'a', 'b', 'c', 'd'};
-        
+
         Random r= new Random();
         //Generate total times a user is allowed to visit the house
         int allowed=r.nextInt(5);
         System.out.println(allowed);
-        
-        welcome();
-        gold= giveGold(gold, 5);
+
+        welcome(v);
+        gold= giveGold(gold, 5, v);
         tell("Start your adventure in one of the rooms: good luck!");
-        
+
         while (allowed>=0){
-      
+
             //Have user move to the first room
             choice= getChoice("Go to: a) ec22433 b) ec22792 c) ec22860 d) ec22562 ", options);
 
@@ -74,7 +74,7 @@ class House_ec22792 extends House{
             if ((d==d.TO_SOUTH) || (d==d.FROM_SOUTH)) {
                 tell("Your journey ends here");
                 tell("Take some gold for the journey");
-                gold= giveGold(gold, 10);
+                gold= giveGold(10, gold, v);
                 tell("Now OUT OF HERE!");
             }
             else {
@@ -142,31 +142,31 @@ class House_ec22792 extends House{
     
 
     //Welcome message
-    void welcome() {
-        tell("Welcome to the OOP.ec22792.A8.House of ec22792!");
-        tell("Here is what it looks like:");
-        tell(" - - - - - - - - - - - - - -");
-        tell("|            |              |");
-        tell("|     ec     |      ec      |");
-        tell("|    22562   |    22433     |");
-        tell("|            |              |");
-        tell(" - - - - - - - - - - - - - - - - - - ");
-        tell("|                                   |");
-        tell(" - - - - - - - - - - - - - -        |");
-        tell("|            |              |       | - - - - - ");
-        tell("|      ec    |     ec       |       |    You    |");
-        tell("|    22860   |    22792     |       |    are    |");
-        tell("|            |              |       |    here   |");
-        tell("|            |              |       | - - - - -");
-        tell(" - - - - - - - - - - - - - - - - - - - - - - - - ");
+    void welcome(Visitor v) {
+        v.tell("Welcome to the OOP.ec22792.A8.House of ec22792!");
+        v.tell("Here is what it looks like:");
+        v.tell(" - - - - - - - - - - - - - -");
+        v.tell("|            |              |");
+        v.tell("|     ec     |      ec      |");
+        v.tell("|    22562   |    22433     |");
+        v.tell("|            |              |");
+        v.tell(" - - - - - - - - - - - - - - - - - - ");
+        v.tell("|                                   |");
+        v.tell(" - - - - - - - - - - - - - -        |");
+        v.tell("|            |              |       | - - - - - ");
+        v.tell("|      ec    |     ec       |       |    You    |");
+        v.tell("|    22860   |    22792     |       |    are    |");
+        v.tell("|            |              |       |    here   |");
+        v.tell("|            |              |       | - - - - -");
+        v.tell(" - - - - - - - - - - - - - - - - - - - - - - - - ");
         return;
     }
     
      //Give gold
-    int giveGold( int newGold, int total){
-        tell("You have received " + newGold + " gold");
+    int giveGold( int newGold, int total, Visitor v){
+        v.tell("You have received " + newGold + " gold");
         total= total+newGold;
-        tell("You have " + total + " gold");
+        v.tell("You have " + total + " gold");
         return total;
     }
     

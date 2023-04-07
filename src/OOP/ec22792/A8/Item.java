@@ -12,5 +12,5 @@ class Item {
         return name.equals(x.name);
     }
     
-    public String toString() {return name + "("+this.hashCode()+")";}
+    public String toString() {return name;} //+ "("+this.hashCode()+")";}
 }
