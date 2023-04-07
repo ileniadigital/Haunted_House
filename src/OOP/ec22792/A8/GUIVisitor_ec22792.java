@@ -25,6 +25,7 @@ public class GUIVisitor_ec22792 implements Visitor{
         p.add(gold);
         p.add(items);
         f.add(p);
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
     }
     @Override
