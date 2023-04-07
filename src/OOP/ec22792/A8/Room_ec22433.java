@@ -1,6 +1,7 @@
 package OOP.ec22792.A8;
 
 class Room_ec22433 extends Room {
+    public Room_ec22433(){}
     public Direction visit(Visitor vPerson, Direction dIntoRoom) {
         final Item goldenPen = new Item("goldenPen");
         // Initial entry

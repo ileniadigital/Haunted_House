@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44457f29-67c3-4427-b70b-a2ac8d0cf0b1" name="Changes" comment="Started GUI and imported correct room" />
+    <list default="true" id="44457f29-67c3-4427-b70b-a2ac8d0cf0b1" name="Changes" comment="Added window with gold and item label">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/GUIVisitor_ec22792.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/A8/GUIVisitor_ec22792.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/A8/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/Room_ec22433.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/A8/Room_ec22433.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,12 +79,20 @@
       <option name="project" value="LOCAL" />
       <updated>1680868684362</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added window with gold and item label">
+      <created>1680872498299</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680872498299</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added files" />
     <MESSAGE value="Started GUI and imported correct room" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started GUI and imported correct room" />
+    <MESSAGE value="Added window with gold and item label" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added window with gold and item label" />
   </component>
 </project>

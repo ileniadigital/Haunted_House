@@ -1,9 +1,10 @@
-package OOP.ec22792.A8;//import java.util.List;
+package OOP.ec22792.A8;
+import java.util.List;
 
 class Direction {
        
     // Hide constructor so unofficial directions cannot be created.
-    private Direction() {}
+    Direction() {}
     
     // Destination's perspective.
     static final Direction FROM_SOUTH = new Direction();
