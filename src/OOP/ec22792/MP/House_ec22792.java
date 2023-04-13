@@ -39,7 +39,10 @@ class House_ec22792 extends House implements ActionListener {
         floor1.put("ec22860", new Room_ec22860());
 
         /*Rooms on second floor*/
-        //TO PICK
+        floor2.put("ec221013", new Room_ec221013());
+        floor2.put("ec221025", new Room_ec221025());
+        floor2.put("ec22558", new Room_ec22558());
+        floor2.put("ec22777", new Room_ec22777());
 
         //Setting the frame size to a phone screen
 
@@ -99,13 +102,13 @@ class House_ec22792 extends House implements ActionListener {
             new Floor1();
             floor1Btn.setEnabled(false);
             floorRooms=floor1;
-            visit(v,dir);
         }
         else if(e.getSource()==floor2Btn){
             new Floor2();
             floor2Btn.setEnabled(false);
             floorRooms=floor2;
         }
+        visit(v,dir);
     }
 
 

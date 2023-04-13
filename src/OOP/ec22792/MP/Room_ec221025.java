@@ -4,7 +4,7 @@ package OOP.ec22792.MP;
 import java.util.Random;
 
 // Subclass - my room
-class room_ec221025 extends Room
+class Room_ec221025 extends Room
 {
     // Method to generate random number 1-10
     public static int generateRandomNumber()

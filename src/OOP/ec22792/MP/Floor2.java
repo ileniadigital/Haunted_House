@@ -7,13 +7,9 @@ import java.awt.event.ActionListener;
 
 public class Floor2 extends JFrame implements ActionListener {
     public static JFrame f= new JFrame();
-    public JPanel p1;
     public JPanel p2;
     public JPanel p3;
     public static JLabel gold;
-    public static JLabel itemsLabel;
-
-    public static String itemsString="";
     public JLabel welcome;
     public JTextArea map;
     public JButton a;
@@ -42,11 +38,11 @@ public class Floor2 extends JFrame implements ActionListener {
         map.setText(
                 """
                          - - - - - - - - - - - - - -
-                        |   ec22562  |  ec22433    |
+                        |   ec22558  |  ec221025    |
                          - - - - - - - - - - - - - - - - - -\s
                         |                                   |
                          - - - - - - - - - - - - - -        | - - - - -
-                        |  ec22860   |    ec22792   |       | YOU |
+                        |  ec22777   |    ec221013  |       | YOU |
                          - - - - - - - - - - - - - - - - - - - - - - - -\s""");
         p2.add(map);
 
@@ -55,17 +51,20 @@ public class Floor2 extends JFrame implements ActionListener {
         p3.setPreferredSize(new Dimension(500,200));
         JLabel options= new JLabel("Go to:");
         p3.add(options);
-        //ec22433
-        a= new JButton("ec22433");
+        //ec221025
+        a= new JButton("ec221025");
         a.addActionListener(this);
         p3.add(a);
-        b= new JButton("ec22792");
+        //ec221013
+        b= new JButton("ec221013");
         b.addActionListener(this);
         p3.add(b);
-        c= new JButton("ec22860");
+        //ec22777
+        c= new JButton("ec22777");
         c.addActionListener(this);
         p3.add(c);
-        d= new JButton("ec22562");
+        //ec22558
+        d= new JButton("ec22558");
         d.addActionListener(this);
         p3.add(d);
 
@@ -77,10 +76,10 @@ public class Floor2 extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==a) {House_ec22792.dir = new Room_ec22433().visit(House_ec22792.v, House_ec22792.dir);}
-        else if(e.getSource()==b){House_ec22792.dir=new Room_ec22792().visit(House_ec22792.v,House_ec22792.dir);}
-        else if(e.getSource()==c){House_ec22792.dir=new Room_ec22860().visit(House_ec22792.v,House_ec22792.dir);}
-        else if(e.getSource()==d) {House_ec22792.dir=new Room_ec22562().visit(House_ec22792.v,House_ec22792.dir);}
+        if (e.getSource()==a) {House_ec22792.dir = new Room_ec221025().visit(House_ec22792.v, House_ec22792.dir);}
+        else if(e.getSource()==b){House_ec22792.dir=new Room_ec221013().visit(House_ec22792.v,House_ec22792.dir);}
+        else if(e.getSource()==c){House_ec22792.dir=new Room_ec22777().visit(House_ec22792.v,House_ec22792.dir);}
+        else if(e.getSource()==d) {House_ec22792.dir=new Room_ec22558().visit(House_ec22792.v,House_ec22792.dir);}
 
     }
 }

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44457f29-67c3-4427-b70b-a2ac8d0cf0b1" name="Changes" comment="Edited visit method to move between rooms">
-      <change afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec221021.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/MP/House_ec22792.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/House_ec22792.java" afterDir="false" />
+    <list default="true" id="44457f29-67c3-4427-b70b-a2ac8d0cf0b1" name="Changes" comment="Imported room for second floor">
+      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/MP/Floor2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Floor2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec221025.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec221025.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681413191997</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Imported room for second floor">
+      <created>1681415689307</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681415689307</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -131,6 +137,7 @@
     <MESSAGE value="Changed package name and created Main" />
     <MESSAGE value="Added two floors that open in new window" />
     <MESSAGE value="Edited visit method to move between rooms" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edited visit method to move between rooms" />
+    <MESSAGE value="Imported room for second floor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Imported room for second floor" />
   </component>
 </project>
