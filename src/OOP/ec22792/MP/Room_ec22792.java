@@ -1,7 +1,6 @@
-package OOP.ec22792.A8;
+package OOP.ec22792.MP;
 
 import javax.swing.*;
-import java.util.Scanner;
 import java.util.Random;
 
 class Room_ec22792 extends Room{

@@ -1,16 +1,11 @@
-package OOP.ec22792.A8;
+package OOP.ec22792.MP;
 
 import javax.swing.*;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class myVisitor implements Visitor {
-    public JFrame f= new JFrame();
     public HashMap<Item,String> items= new HashMap<Item,String>();
     public int gold;
-    public DefaultListModel<Item> model= new DefaultListModel<>();
-    public JList<Item> itemList= new JList<>();
 
 
     @Override
@@ -41,12 +36,20 @@ public class myVisitor implements Visitor {
         return choice;
     }
 
+    public static String itemsToString(HashMap<Item, String> xs){
+        House_ec22792.itemsString="";
+        for (String x: House_ec22792.itemList.values()){
+            House_ec22792.itemsString+=x+ " ,";
+        }
+        return House_ec22792.itemsString;
+    }
+
     @Override
     public boolean giveItem(Item itemGivenToVisitor) {
         if (!((hasEqualItem(itemGivenToVisitor)) || (hasIdenticalItem(itemGivenToVisitor)))){
-            GUIVisitor_ec22792.itemList.put(itemGivenToVisitor, itemGivenToVisitor.toString());
-            GUIVisitor_ec22792.itemsString=GUIVisitor_ec22792.itemsToString(GUIVisitor_ec22792.itemList);
-            GUIVisitor_ec22792.itemsLabel.setText("Items: " + GUIVisitor_ec22792.itemsString);
+            House_ec22792.itemList.put(itemGivenToVisitor, itemGivenToVisitor.toString());
+            House_ec22792.itemsString=House_ec22792.itemsToString(House_ec22792.itemList);
+            House_ec22792.itemsLabel.setText("Items: " + House_ec22792.itemsString);
             return true;
         }
         return false;
@@ -73,16 +76,16 @@ public class myVisitor implements Visitor {
     @Override
     public void giveGold(int numberOfPiecesToGive) {
             tell("You have received " + numberOfPiecesToGive+ " gold");
-            GUIVisitor_ec22792.goldTot= GUIVisitor_ec22792.goldTot+numberOfPiecesToGive;
-            GUIVisitor_ec22792.gold.setText("Gold:" + Integer.toString(GUIVisitor_ec22792.goldTot));
+            House_ec22792.goldTot= House_ec22792.goldTot+numberOfPiecesToGive;
+            House_ec22792.gold.setText("Gold:" + House_ec22792.goldTot);
             return;
     }
 
     @Override
     public int takeGold(int numberOfPiecesToTake) {
         tell("You lose " + numberOfPiecesToTake + "gold");
-        GUIVisitor_ec22792.goldTot=GUIVisitor_ec22792.goldTot-numberOfPiecesToTake;
-        GUIVisitor_ec22792.gold.setText("Gold:" + Integer.toString(GUIVisitor_ec22792.goldTot));
+        House_ec22792.goldTot=House_ec22792.goldTot-numberOfPiecesToTake;
+        House_ec22792.gold.setText("Gold:" + Integer.toString(House_ec22792.goldTot));
         return gold;
     }
 }

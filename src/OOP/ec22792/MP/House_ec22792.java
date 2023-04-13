@@ -1,11 +1,36 @@
-package OOP.ec22792.A8;
+package OOP.ec22792.MP;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.io.PrintStream;
 import java.io.InputStream;
 import java.util.Random;
 
-class House_ec22792 extends House{
+class House_ec22792 extends House implements ActionListener {
+    public JFrame f= new JFrame();
+    public JPanel p1;
+    public JPanel p2;
+    public JPanel p3;
+    public static JLabel gold;
+    public static int goldTot= 0;
+    public static JList<Item> items;
+    public static JLabel itemsLabel;
+    public static HashMap<Item,String> itemList= new HashMap<Item,String>();
+    public static String itemsString="";
+    public JLabel welcome;
+    public JTextArea map;
+    public JButton a;
+    public JButton b;
+    public JButton c;
+    public JButton d;
+    public final Visitor v= new GUIVisitor_ec22792();
+    public Direction dir= new Direction();
+    public HashMap<Room, String> floor1= new HashMap<Room,String>();
+    public HashMap<Room, String> floor2= new HashMap<Room,String>();
     private Room r1;
     private Room r2;
     private Room r3;
@@ -23,16 +48,101 @@ class House_ec22792 extends House{
     } */
     
     //Constructor
-    House_ec22792() {
+    House_ec22792(JFrame f) {
+        //Create GUI
+        /*Rooms on the first floor*/
         //My room
-        r1= new Room_ec22792();
-        
+        floor1.put(new Room_ec22792(), "ec22792") ;
         //Rooms chosen at random from A5 contributions
-        r2= new Room_ec22433();
-        r3= new Room_ec22562();
-        r4= new Room_ec22860();
+        floor1.put(new Room_ec22433(), "ec2433");
+        floor1.put(new Room_ec22562(), "ec22562");
+        floor1.put(new Room_ec22860(), "ec22860");
+
+        /*Rooms on second floor*/
+        //TO PICK
+
+        //Setting the frame size to a phone screen
+        f.setSize(new Dimension(720,1280));
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f.setLayout(new GridLayout(3,1,0,10));
+        f.setTitle("House of ec22792");
+
+        //Gold and items
+        p1= new JPanel();
+        p1.setPreferredSize(new Dimension(720,425));
+        //Gold
+        gold= new JLabel("Gold: "+ goldTot);
+        gold.setHorizontalAlignment(JLabel.LEFT);
+        gold.setVerticalAlignment(JLabel.TOP);
+        gold.setBackground(Color.orange);
+        gold.setOpaque(true);
+        p1.add(gold);
+        //Items
+        itemsString= itemsToString(itemList);
+        itemsLabel= new JLabel("Items" + itemsString);
+        itemsLabel.setBackground(Color.orange);
+        itemsLabel.setOpaque(true);
+        p1.add(itemsLabel);
+
+        //Welcome & map
+        p2= new JPanel();
+        p2.setPreferredSize(new Dimension(720,425));
+        welcome= new JLabel("Welcome to the House of ec22792!");
+        welcome.setHorizontalAlignment(JLabel.CENTER);
+        welcome.setVerticalAlignment(JLabel.CENTER);
+        p2.add(welcome);
+
+        map= new JTextArea();
+        map.setText(
+                " - - - - - - - - - - - - - -\n" +
+                        "|   ec22562  |  ec22433    |\n" +
+                        " - - - - - - - - - - - - - - - - - - \n" +
+                        "|                                   |\n" +
+                        " - - - - - - - - - - - - - -        | - - - - -\n" +
+                        "|  ec22860   |    ec22792   |       | YOU |\n" +
+                        " - - - - - - - - - - - - - - - - - - - - - - - - ");
+        p2.add(map);
+
+        //Options
+        p3= new JPanel();
+        p3.setPreferredSize(new Dimension(720,425));
+        JLabel options= new JLabel("Go to:");
+        p3.add(options);
+        //ec22433
+        a= new JButton("ec22433");
+        a.addActionListener(this);
+        p3.add(a);
+        b= new JButton("ec22792");
+        b.addActionListener(this);
+        p3.add(b);
+        c= new JButton("ec22860");
+        c.addActionListener(this);
+        p3.add(c);
+        d= new JButton("ec22562");
+        d.addActionListener(this);
+        p3.add(d);
+
+        f.add(p1, BorderLayout.NORTH);
+        f.add(p2);
+        f.add(p3);
     }
-    
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==a) {dir = new Room_ec22433().visit(v, dir);}
+        else if(e.getSource()==b){dir=new Room_ec22792().visit(v,dir);}
+        else if(e.getSource()==c){dir=new Room_ec22860().visit(v,dir);}
+        else if(e.getSource()==d) {dir=new Room_ec22562().visit(v,dir);}
+    }
+
+    public static String itemsToString(HashMap<Item, String> xs){
+        itemsString="";
+        for (String x: itemList.values()){
+            itemsString+=x+ " ,";
+        }
+        return itemsString;
+    }
+
     //visit method
     public Direction visit(Visitor v, Direction d) {
         int gold=0;

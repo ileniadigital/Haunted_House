@@ -1,4 +1,4 @@
-package OOP.ec22792.A8;
+package OOP.ec22792.MP;
 
 class Item {
     
