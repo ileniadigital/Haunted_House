@@ -18,7 +18,6 @@ class House_ec22792 extends House implements ActionListener {
     public static HashMap<Item,String> itemList= new HashMap<>();
     public static String itemsString="";
     public JLabel welcome;
-    public JTextArea map;
     public static Visitor v= new GUIVisitor_ec22792();
     public static Direction dir= new Direction();
     public static HashMap<String, Room> floor1= new HashMap<>();
@@ -74,9 +73,6 @@ class House_ec22792 extends House implements ActionListener {
         welcome.setVerticalAlignment(JLabel.CENTER);
         p2.add(welcome);
 
-        map= new JTextArea();
-        map.setText("");
-        p2.add(map);
 
         //Options
         p3= new JPanel();
@@ -123,6 +119,7 @@ class House_ec22792 extends House implements ActionListener {
     @Override
     //visit method
     public Direction visit(Visitor v, Direction d) {
+        v.tell("You are in "+ floorRooms.get(current));
         Room[] rooms= new Room[floorRooms.size()];
         floorRooms.values().toArray(rooms);
         Room r1 = rooms[0];
@@ -130,6 +127,8 @@ class House_ec22792 extends House implements ActionListener {
         Room r3 = rooms[2];
         Room r4 = rooms[3];
 
+        //Always starts from r1
+        current=r1;
         char[] options = {'a', 'b', 'c', 'd'};
         v.giveGold(5);
 
