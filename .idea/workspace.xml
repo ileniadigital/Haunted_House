@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44457f29-67c3-4427-b70b-a2ac8d0cf0b1" name="Changes" comment="Imported room for second floor">
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/MP/Floor2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Floor2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec221025.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec221025.java" afterDir="false" />
+    <list default="true" id="44457f29-67c3-4427-b70b-a2ac8d0cf0b1" name="Changes" comment="Finished second floor">
+      <change afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Floor3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec22486.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec22519.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec22772.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec22871.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/MP/GUIVisitor_ec22792.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/GUIVisitor_ec22792.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/MP/House_ec22792.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/House_ec22792.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +55,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\LENOVO\IdeaProjects\MP-ec22792\src\OOP\ec22792\MP" />
+      <recent name="C:\Users\LENOVO\IdeaProjects\MP-ec22792\src" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="OOP.ec22792.A8" />
@@ -126,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681415689307</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Finished second floor">
+      <created>1681417027417</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681417027417</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -138,6 +152,7 @@
     <MESSAGE value="Added two floors that open in new window" />
     <MESSAGE value="Edited visit method to move between rooms" />
     <MESSAGE value="Imported room for second floor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Imported room for second floor" />
+    <MESSAGE value="Finished second floor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished second floor" />
   </component>
 </project>

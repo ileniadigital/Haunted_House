@@ -1,8 +1,10 @@
 package OOP.ec22792.MP;
 
 import javax.swing.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class GUIVisitor_ec22792 implements Visitor {
+public class GUIVisitor_ec22792 implements Visitor, KeyListener {
 
     //Constructor
     public GUIVisitor_ec22792(){}
@@ -80,5 +82,19 @@ public class GUIVisitor_ec22792 implements Visitor {
     }
 
 
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+    }
 }
 

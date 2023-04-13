@@ -22,8 +22,10 @@ class House_ec22792 extends House implements ActionListener {
     public static Direction dir= new Direction();
     public static HashMap<String, Room> floor1= new HashMap<>();
     private final JButton floor1Btn;
-    public HashMap<String, Room> floor2= new HashMap<>();
+    public static HashMap<String, Room> floor2= new HashMap<>();
     private final JButton floor2Btn;
+    private final JButton floor3Btn;
+    private final HashMap<String, Room> floor3= new HashMap<>();
     private HashMap<String, Room> floorRooms;
     public static Room current;
 
@@ -43,6 +45,12 @@ class House_ec22792 extends House implements ActionListener {
         floor2.put("ec221025", new Room_ec221025());
         floor2.put("ec22558", new Room_ec22558());
         floor2.put("ec22777", new Room_ec22777());
+
+        /*Rooms on third floor*/
+        floor3.put("ec22486", new Room_ec22486());
+        floor3.put("ec22519", new Room_ec22519());
+        floor3.put("ec22772", new Room_ec22772());
+        floor3.put("ec22871", new Room_ec22871());
 
         //Setting the frame size to a phone screen
 
@@ -82,13 +90,19 @@ class House_ec22792 extends House implements ActionListener {
         p3.setPreferredSize(new Dimension(720,425));
         JLabel options= new JLabel("Go to:");
         p3.add(options);
-        //First floor
+        //Floor 1
         floor1Btn= new JButton("Ground floor");
         floor1Btn.addActionListener(this);
         p3.add(floor1Btn);
+        //Floor 2
         floor2Btn= new JButton("First floor");
         floor2Btn.addActionListener(this);
         p3.add(floor2Btn);
+        //Floor 3
+        floor3Btn= new JButton("Second floor");
+        floor3Btn.addActionListener(this);
+        p3.add(floor3Btn);
+
 
         f.add(p1, BorderLayout.NORTH);
         f.add(p2);
@@ -107,6 +121,11 @@ class House_ec22792 extends House implements ActionListener {
             new Floor2();
             floor2Btn.setEnabled(false);
             floorRooms=floor2;
+        }
+        else if(e.getSource()==floor3Btn){
+            new Floor3();
+            floor3Btn.setEnabled(false);
+            floorRooms=floor3;
         }
         visit(v,dir);
     }
