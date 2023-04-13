@@ -4,13 +4,6 @@ import javax.swing.*;
 import java.util.*;
 
 public class GUIVisitor_ec22792 implements Visitor {
-    public static JLabel gold;
-    public static int goldTot= 0;
-    public static JLabel itemsLabel;
-    public static HashMap<Item,String> itemList= new HashMap<Item,String>();
-    public static String itemsString="";
-    public Visitor v= new myVisitor();
-    public Direction dir= new Direction();
 
     //Constructor
     public GUIVisitor_ec22792(){}
@@ -24,9 +17,9 @@ public class GUIVisitor_ec22792 implements Visitor {
     @Override
     public boolean giveItem(Item itemGivenToVisitor) {
         if (!((hasEqualItem(itemGivenToVisitor)) || (hasIdenticalItem(itemGivenToVisitor)))){
-            itemList.put(itemGivenToVisitor, itemGivenToVisitor.toString());
-            itemsString=House_ec22792.itemsToString(itemList);
-            itemsLabel.setText("Items: " + itemsString);
+            House_ec22792.itemList.put(itemGivenToVisitor, itemGivenToVisitor.toString());
+            House_ec22792.itemsString=House_ec22792.itemsToString(House_ec22792.itemList);
+            House_ec22792.itemsLabel.setText("Items: " + House_ec22792.itemsString);
             return true;
         }
         return false;
@@ -35,7 +28,7 @@ public class GUIVisitor_ec22792 implements Visitor {
 
     @Override
     public boolean hasEqualItem(Item itemToCheckFor) {
-        if (itemList.containsValue(itemToCheckFor.toString())){
+        if (House_ec22792.itemList.containsValue(itemToCheckFor.toString())){
             return true;
         }
         return false;
@@ -43,7 +36,7 @@ public class GUIVisitor_ec22792 implements Visitor {
 
     @Override
     public boolean hasIdenticalItem(Item itemToCheckFor) {
-        if (GUIVisitor_ec22792.itemList.containsKey(itemToCheckFor)){
+        if (House_ec22792.itemList.containsKey(itemToCheckFor)){
             return true;
         }
         return false;
@@ -53,17 +46,17 @@ public class GUIVisitor_ec22792 implements Visitor {
     @Override
     public void giveGold(int numberOfPiecesToGive) {
         tell("You have received " + numberOfPiecesToGive+ " gold");
-        goldTot = goldTot + numberOfPiecesToGive;
-        gold.setText("Gold:" + Integer.toString(goldTot));
+        House_ec22792.goldTot = House_ec22792.goldTot + numberOfPiecesToGive;
+        House_ec22792.gold.setText("Gold:" + House_ec22792.goldTot);
         return;
     }
 
     @Override
     public int takeGold(int numberOfPiecesToTake) {
         tell("You lose " + numberOfPiecesToTake + "gold");
-        goldTot=goldTot-numberOfPiecesToTake;
-        gold.setText("Gold:" + Integer.toString(goldTot));
-        return goldTot;
+        House_ec22792.goldTot=House_ec22792.goldTot-numberOfPiecesToTake;
+        House_ec22792.gold.setText("Gold:" + House_ec22792.goldTot);
+        return House_ec22792.goldTot;
     }
 
     public char getChoice(String descriptionOfChoices, char[] arrayOfPossibleChoices) {

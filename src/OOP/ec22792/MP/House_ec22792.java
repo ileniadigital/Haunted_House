@@ -2,13 +2,12 @@ package OOP.ec22792.MP;
 
 import javax.swing.*;
 import java.awt.*;
+import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 import java.io.PrintStream;
 import java.io.InputStream;
-import java.util.Random;
 
 class House_ec22792 extends House implements ActionListener {
     public JFrame f= new JFrame();
@@ -17,27 +16,26 @@ class House_ec22792 extends House implements ActionListener {
     public JPanel p3;
     public static JLabel gold;
     public static int goldTot= 0;
-    public static JList<Item> items;
     public static JLabel itemsLabel;
-    public static HashMap<Item,String> itemList= new HashMap<Item,String>();
+    public static HashMap<Item,String> itemList= new HashMap<>();
     public static String itemsString="";
     public JLabel welcome;
     public JTextArea map;
-    public JButton a;
-    public JButton b;
-    public JButton c;
-    public JButton d;
-    public final Visitor v= new GUIVisitor_ec22792();
-    public Direction dir= new Direction();
-    public HashMap<Room, String> floor1= new HashMap<Room,String>();
-    public HashMap<Room, String> floor2= new HashMap<Room,String>();
+    public static Visitor v= new GUIVisitor_ec22792();
+    public static Direction dir= new Direction();
+    public HashMap<Room, String> floor1= new HashMap<>();
+    private final JButton floor1Btn;
+    public HashMap<Room, String> floor2= new HashMap<>();
+    private final JButton floor2Btn;
     private Room r1;
     private Room r2;
     private Room r3;
     private Room r4;
     private Room current;
-    private static PrintStream ps= System.out;
-    private static InputStream is= System.in ;
+    private static final PrintStream ps= System.out;
+    private static final InputStream is= System.in ;
+    private Floor1 f1;
+    private boolean f1created=false;
 
     //main to test
    /* public static void main(String[] args){
@@ -48,7 +46,7 @@ class House_ec22792 extends House implements ActionListener {
     } */
     
     //Constructor
-    House_ec22792(JFrame f) {
+    House_ec22792() {
         //Create GUI
         /*Rooms on the first floor*/
         //My room
@@ -62,6 +60,7 @@ class House_ec22792 extends House implements ActionListener {
         //TO PICK
 
         //Setting the frame size to a phone screen
+
         f.setSize(new Dimension(720,1280));
         f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         f.setLayout(new GridLayout(3,1,0,10));
@@ -93,14 +92,7 @@ class House_ec22792 extends House implements ActionListener {
         p2.add(welcome);
 
         map= new JTextArea();
-        map.setText(
-                " - - - - - - - - - - - - - -\n" +
-                        "|   ec22562  |  ec22433    |\n" +
-                        " - - - - - - - - - - - - - - - - - - \n" +
-                        "|                                   |\n" +
-                        " - - - - - - - - - - - - - -        | - - - - -\n" +
-                        "|  ec22860   |    ec22792   |       | YOU |\n" +
-                        " - - - - - - - - - - - - - - - - - - - - - - - - ");
+        map.setText("");
         p2.add(map);
 
         //Options
@@ -108,37 +100,35 @@ class House_ec22792 extends House implements ActionListener {
         p3.setPreferredSize(new Dimension(720,425));
         JLabel options= new JLabel("Go to:");
         p3.add(options);
-        //ec22433
-        a= new JButton("ec22433");
-        a.addActionListener(this);
-        p3.add(a);
-        b= new JButton("ec22792");
-        b.addActionListener(this);
-        p3.add(b);
-        c= new JButton("ec22860");
-        c.addActionListener(this);
-        p3.add(c);
-        d= new JButton("ec22562");
-        d.addActionListener(this);
-        p3.add(d);
+        //First floor
+        f1=null;
+        floor1Btn= new JButton("Ground floor");
+        floor1Btn.addActionListener(this);
+        p3.add(floor1Btn);
+        floor2Btn= new JButton("First floor");
+        floor2Btn.addActionListener(this);
+        p3.add(floor2Btn);
 
         f.add(p1, BorderLayout.NORTH);
         f.add(p2);
         f.add(p3);
+        f.pack();
+        f.setVisible(true);
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==a) {dir = new Room_ec22433().visit(v, dir);}
-        else if(e.getSource()==b){dir=new Room_ec22792().visit(v,dir);}
-        else if(e.getSource()==c){dir=new Room_ec22860().visit(v,dir);}
-        else if(e.getSource()==d) {dir=new Room_ec22562().visit(v,dir);}
+        if (e.getSource()==floor1Btn){
+            Floor1 f1= new Floor1();
+            floor1Btn.setEnabled(false);
+        }
+        else if(e.getSource()==floor2Btn){
+            Floor2 f2=new Floor2();}
     }
 
     public static String itemsToString(HashMap<Item, String> xs){
         itemsString="";
         for (String x: itemList.values()){
-            itemsString+=x+ " ,";
+            itemsString = itemsString + (x + " ,");
         }
         return itemsString;
     }
@@ -181,7 +171,7 @@ class House_ec22792 extends House implements ActionListener {
             }
 
             //If direction returned is SOUTH, the user leaves
-            if ((d==d.TO_SOUTH) || (d==d.FROM_SOUTH)) {
+            if ((d== Direction.TO_SOUTH) || (d== Direction.FROM_SOUTH)) {
                 tell("Your journey ends here");
                 tell("Take some gold for the journey");
                 gold= giveGold(10, gold, v);
@@ -269,7 +259,6 @@ class House_ec22792 extends House implements ActionListener {
         v.tell("|            |              |       |    here   |");
         v.tell("|            |              |       | - - - - -");
         v.tell(" - - - - - - - - - - - - - - - - - - - - - - - - ");
-        return;
     }
     
      //Give gold
@@ -283,13 +272,12 @@ class House_ec22792 extends House implements ActionListener {
     //Tell the user something
     void tell(String s) {
         System.out.println(s);
-        return;
     }
     
     //Get the user's choice
     char getChoice(String choice, char [] options){
 
-        System.out.println(choice + " " + options);
+        System.out.println(choice + " " + Arrays.toString(options));
         String uChoice = inputString();
         uChoice= uChoice.toLowerCase();
         char uChar= uChoice.charAt(0);
@@ -311,8 +299,9 @@ class House_ec22792 extends House implements ActionListener {
     boolean check(char choice, char[] options){
         boolean valid= false;
         for (char x : options) {
-            if (x==choice) {
-                valid=true;
+            if (x == choice) {
+                valid = true;
+                break;
             }
         }
         return valid;
@@ -321,8 +310,7 @@ class House_ec22792 extends House implements ActionListener {
     //inputString
     String inputString() {
         Scanner sc= new Scanner(System.in);
-        String ans= sc.nextLine();
-        return ans;
+        return sc.nextLine();
     }
     
     

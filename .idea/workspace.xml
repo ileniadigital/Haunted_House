@@ -4,24 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44457f29-67c3-4427-b70b-a2ac8d0cf0b1" name="Changes" comment="Added a new class so I can create Visitor object. Finished main GUI and added actions">
-      <change afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/GUIVisitor_ec22792.java" afterDir="false" />
+    <list default="true" id="44457f29-67c3-4427-b70b-a2ac8d0cf0b1" name="Changes" comment="Changed package name and created Main">
+      <change afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Floor1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Floor2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Direction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/GUIVisitor_ec22792.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/GUIVisitor_ec22792.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/GUIVisitor_ec22792.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/House_ec22792.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/House_ec22792.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/MP_ec22792.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/Room_ec22433.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec22433.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/Room_ec22562.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec22562.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/Room_ec22792.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec22792.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/Room_ec22860.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec22860.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/Visitable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Visitable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/Visitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Visitor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/A8/myVisitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/myVisitor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/MP/GUIVisitor_ec22792.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/GUIVisitor_ec22792.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/MP/House_ec22792.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/House_ec22792.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/MP/MP_ec22792.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/MP_ec22792.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/MP/myVisitor.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680883377162</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Changed package name and created Main">
+      <created>1681382767899</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681382767899</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -121,6 +118,7 @@
     <MESSAGE value="Started GUI and imported correct room" />
     <MESSAGE value="Added window with gold and item label" />
     <MESSAGE value="Added a new class so I can create Visitor object. Finished main GUI and added actions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a new class so I can create Visitor object. Finished main GUI and added actions" />
+    <MESSAGE value="Changed package name and created Main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed package name and created Main" />
   </component>
 </project>
