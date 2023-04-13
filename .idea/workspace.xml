@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44457f29-67c3-4427-b70b-a2ac8d0cf0b1" name="Changes" comment="Finished second floor">
-      <change afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Floor3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec22486.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec22519.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec22772.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/Room_ec22871.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/MP/GUIVisitor_ec22792.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/GUIVisitor_ec22792.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OOP/ec22792/MP/House_ec22792.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OOP/ec22792/MP/House_ec22792.java" afterDir="false" />
-    </list>
+    <list default="true" id="44457f29-67c3-4427-b70b-a2ac8d0cf0b1" name="Changes" comment="Added third floor" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681417027417</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added third floor">
+      <created>1681419403491</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681419403491</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -153,6 +151,7 @@
     <MESSAGE value="Edited visit method to move between rooms" />
     <MESSAGE value="Imported room for second floor" />
     <MESSAGE value="Finished second floor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished second floor" />
+    <MESSAGE value="Added third floor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added third floor" />
   </component>
 </project>
