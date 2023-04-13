@@ -1,8 +1,11 @@
-# A8-ec22792
-A8 app with House_ec22792 and its respective rooms
+# MP-ec22792
 
-FOR A8 IMPLEMENTATION:
-UI for House_ec22792 with its 4 respective rooms
+Mini game based on class projects A4 and A5, iterative improvement of my A8 assignment.
+Rooms used (chosen at random from contributions):
+-ec22792 (mine)
+-ec22433
+-ec22562
+-ec22860
 
-FOR MINI-PROJECT IMPLEMENTATION:
-Coming soon...
+Houses used:
+-ec22792 (mine)
