@@ -1,7 +1,6 @@
 package OOP.ec22792.MP;
 
 import javax.swing.*;
-import java.util.*;
 
 public class GUIVisitor_ec22792 implements Visitor {
 
@@ -48,7 +47,6 @@ public class GUIVisitor_ec22792 implements Visitor {
         tell("You have received " + numberOfPiecesToGive+ " gold");
         House_ec22792.goldTot = House_ec22792.goldTot + numberOfPiecesToGive;
         House_ec22792.gold.setText("Gold:" + House_ec22792.goldTot);
-        return;
     }
 
     @Override
