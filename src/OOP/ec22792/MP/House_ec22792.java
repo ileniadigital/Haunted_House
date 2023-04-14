@@ -8,16 +8,17 @@ import java.awt.event.ActionListener;
 import java.util.*;
 
 class House_ec22792 extends House implements ActionListener {
-    public JFrame f= new JFrame();
-    public JPanel p1;
-    public JPanel p2;
-    public JPanel p3;
+    private final JFrame f= new JFrame();
+    private final JPanel p1;
+    private final JPanel p2;
+    private final JPanel p3;
     public static JLabel gold;
     public static int goldTot= 0;
     public static JLabel itemsLabel;
     public static HashMap<Item,String> itemList= new HashMap<>();
     public static String itemsString="";
-    public JLabel welcome;
+    private final JLabel welcome;
+    private JTextArea map;
     public static Visitor v= new GUIVisitor_ec22792();
     public static Direction dir= new Direction();
     public static HashMap<String, Room> floor1= new HashMap<>();
@@ -83,6 +84,20 @@ class House_ec22792 extends House implements ActionListener {
         welcome.setHorizontalAlignment(JLabel.CENTER);
         welcome.setVerticalAlignment(JLabel.CENTER);
         p2.add(welcome);
+        map= new JTextArea("""
+                |----------------------------|
+                |-----------Floor_2----------|
+                |----------------------------|
+                |----------------------------|
+                |-----------Floor_1----------|
+                |----------------------------|
+                |----------------------------|
+                |---------Ground_Floor-------|
+                |----------------------------|
+                """);
+        map.setEditable(false);
+        p2.add(map);
+
 
 
         //Options
