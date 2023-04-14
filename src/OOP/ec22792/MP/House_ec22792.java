@@ -141,7 +141,6 @@ class House_ec22792 extends House implements ActionListener {
     @Override
     //visit method
     public Direction visit(Visitor v, Direction d) {
-        v.tell("You are in "+ floorRooms.get(current));
         Room[] rooms= new Room[floorRooms.size()];
         floorRooms.values().toArray(rooms);
         Room r1 = rooms[0];
