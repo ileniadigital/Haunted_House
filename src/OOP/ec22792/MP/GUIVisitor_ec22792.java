@@ -1,10 +1,8 @@
 package OOP.ec22792.MP;
 
 import javax.swing.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 
-public class GUIVisitor_ec22792 implements Visitor, KeyListener {
+public class GUIVisitor_ec22792 implements Visitor {
 
     //Constructor
     public GUIVisitor_ec22792(){}
@@ -59,11 +57,17 @@ public class GUIVisitor_ec22792 implements Visitor, KeyListener {
         return House_ec22792.goldTot;
     }
 
+    @Override
     public char getChoice(String descriptionOfChoices, char[] arrayOfPossibleChoices) {
         char choice;
         boolean valid = false;
         JOptionPane.showMessageDialog(null, descriptionOfChoices);
-        String ans = JOptionPane.showInputDialog(null, "Enter choice");
+        String ans = "";
+
+        while (ans.isEmpty()) {
+            ans = JOptionPane.showInputDialog(null, "Enter choice");
+        }
+
         choice = ans.charAt(0);
 
         while (!valid) {
@@ -79,22 +83,6 @@ public class GUIVisitor_ec22792 implements Visitor, KeyListener {
             }
         }
         return choice;
-    }
-
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-
     }
 }
 
